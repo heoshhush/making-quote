@@ -15,21 +15,21 @@ const Maker = ({ authService } ) => {
             author: 'Heo',
             quote: 'Know Yourself',
             fileName: 'heo',
-            fileURL: 'heo',
+            fileURL: null,
         },
         2: {
             id: 2 ,
             author: 'Heo',
             quote: 'Know Yourself2',
             fileName: 'heo',
-            fileURL: 'heo',
+            fileURL: null,
         },
         3: {
             id: 3 ,
             author: 'Heo',
             quote: 'Know Yourself3',
             fileName: 'heo',
-            fileURL: 'heo',
+            fileURL: null,
         },
     })
     
@@ -39,6 +39,13 @@ const Maker = ({ authService } ) => {
     const onLogout = () => {
         authService.logout();
     }
+
+    const updateCards = (card) => {
+        const updated =  cards
+        updated[card.id] = card; // card자체가 바뀌어야한다고요!
+        setCards(updated);
+    }
+
 
     useEffect(
         firebaseAuth.onAuthStateChanged(user => {
@@ -60,6 +67,7 @@ const Maker = ({ authService } ) => {
                         <Editor 
                             cards = {cards}
                             keys = {Object.keys(cards)}
+                            updateCards = {updateCards}
                         />
                     </div>
                     
@@ -75,8 +83,7 @@ const Maker = ({ authService } ) => {
         </section>
         <Footer />
         </>
-        
-        //해야할일: editor, add, preview 만들기
+    
     )
 }
 

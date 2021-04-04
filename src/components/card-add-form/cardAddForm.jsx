@@ -1,24 +1,21 @@
 import React, { useRef } from 'react';
-import Styles from './cardEditForm.module.css'
+import Styles from './cardAddForm.module.css'
 
-const CardEditForm = ({card, key, updateCards}) => {
+const CardAddForm = (props) => {
     const fileInputRef = useRef();
-
+        
     const clickFileInput = (event) => {
         event.preventDefault();
         fileInputRef.current.click();
     }
 
-    const onChange = () => {
-        updateCards(card)
-    }
-
-
     return (
-        <div className={Styles.cardEditForm}>
+
+
+        <div className={Styles.cardAddForm}>
             <form className={Styles.form}>
                 <div className={Styles.firstLine}>
-                    <input className={Styles.author} name="author" type="text" onChange={onChange} value={card.author}/>
+                    <input className={Styles.author} name="author" type="text" placeholder="Author"/>
                     <select className={Styles.theme}>
                         <option value="white">white</option>
                         <option value="black">black</option>
@@ -29,10 +26,10 @@ const CardEditForm = ({card, key, updateCards}) => {
                     <button className={Styles.fileInputBtn} onClick={clickFileInput}>File</button>
                 </div>
                 </div>
-                <textarea className={Styles.quote} name="quote"cols="30" rows="10" value={card.quote}>
+                <textarea className={Styles.quote} name="quote"cols="30" rows="10" placeholder="Your Quote">
                     
                 </textarea>
-                <button className={Styles.addBtn} name="deleteBtn">Delete</button>
+                <button className={Styles.addBtn} name="addBtn">Add</button>
                 
                 
 
@@ -41,4 +38,4 @@ const CardEditForm = ({card, key, updateCards}) => {
     )
 }
 
-export default CardEditForm;
+export default CardAddForm;

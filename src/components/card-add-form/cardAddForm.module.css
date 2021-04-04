@@ -1,6 +1,6 @@
 @value makerBlack, makerWhite from '../../common/colors.css';
 
-.cardEditForm {
+.cardAddForm {
   margin-bottom: 2em;
   width: 80%;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
