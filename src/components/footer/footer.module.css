@@ -1,0 +1,15 @@
+@value makerBlack, makerWhite from '../../common/colors.css';
+
+.footer {
+  background-color: makerBlack;
+  color: makerWhite;
+  height: 2.5em;
+  border-radius: 0 0 1em 1em;
+}
+.logo {
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: 2.5em;
+}

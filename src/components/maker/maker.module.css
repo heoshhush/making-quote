@@ -1,0 +1,37 @@
+@value makerBlack, makerWhite, makerGrey from '../../common/colors.css';
+
+.container {
+  background-color: makerWhite;
+  min-height: 50em;
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-end;
+}
+.logoutBtn {
+  width: 6em;
+  cursor: pointer;
+  font-size: 1.3em;
+  background-color: makerBlack;
+  color: makerWhite;
+  border-radius: 0.2em;
+  margin: 0.5em 1em;
+}
+
+.logoutBtn:hover {
+  background-color: makerWhite;
+  color: makerBlack;
+}
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+.editor {
+  flex-basis: 50%;
+}
+.preview {
+  flex-basis: 50%;
+}

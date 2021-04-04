@@ -1,0 +1,56 @@
+@value makerBlack, makerWhite from '../../common/colors.css';
+
+.cardEditForm {
+  margin-bottom: 2em;
+  width: 80%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.firstLine {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.fileInput {
+  display: none;
+}
+.author {
+  flex-basis: 60%;
+  border: 2px solid makerBlack;
+  padding: 0.5em;
+}
+.theme {
+  flex-basis: 20%;
+  border: 2px solid makerBlack;
+  padding: 0.5em;
+}
+.file {
+  flex-basis: 20%;
+  border: 2px solid makerBlack;
+}
+.fileInputBtn {
+  cursor: pointer;
+  width: 100%;
+  height: 2.2em;
+  background-color: makerBlack;
+  color: makerWhite;
+}
+.fileInputBtn:hover {
+  background-color: makerWhite;
+  color: makerBlack;
+}
+.quote {
+  resize: none;
+  border: 2px solid makerBlack;
+  border-top: 0;
+  padding: 0.5em;
+}
+.addBtn {
+  height: 2em;
+  font-size: 1.2em;
+  background-color: makerBlack;
+  color: makerWhite;
+}
