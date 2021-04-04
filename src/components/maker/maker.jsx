@@ -39,13 +39,20 @@ const Maker = ({ authService } ) => {
     const onLogout = () => {
         authService.logout();
     }
-
-    const updateCards = (card) => {
-        const updated =  cards
-        updated[card.id] = card; // card자체가 바뀌어야한다고요!
-        setCards(updated);
+    
+    const updateCard = (card) => {
+        setCards((cards) => {
+            const updated = {...cards};
+            updated[card.id] = card;
+            return updated;
+        })
     }
 
+    // const updateCard = (card) => {
+    //     const updated = {...cards};
+    //     updated[card.id] = card;
+    //     setCards(updated)
+    // }
 
     useEffect(
         firebaseAuth.onAuthStateChanged(user => {
@@ -67,7 +74,7 @@ const Maker = ({ authService } ) => {
                         <Editor 
                             cards = {cards}
                             keys = {Object.keys(cards)}
-                            updateCards = {updateCards}
+                            updateCard = {updateCard}
                         />
                     </div>
                     
