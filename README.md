@@ -1,70 +1,19 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# making-quote
+<br>
+<ol>
+  <li><strong>프로젝트 이름</strong> : Making Quote</li>
+  <li><strong>사용 언어</strong> : HTML, CSS, JavaScript, React JS, 기타 fireBase, Cloudinary의 API </li>
+  <li><strong>주요 기능</strong> 
+    <ul>
+      <li><strong>로그인: </strong>페이지 메인 화면으로, Google 혹은 Github로 사용자 로그인할 수 있습니다.</li>
+          <br>
+          <img src = "sample1.jpg" width= 520px>
+      <li><strong>카드 입력 및 추가: </strong>왼쪽 화면에서 author, theme, 나타내고 싶은 quote를 작성한 뒤, 버튼을 눌러 이미지를 업로드 할 수 있습니다. 그리고 카드 하단의 Add 버튼을 눌러 명언 카드를 추가할 수 있습니다.</li>
+          <br>
+          <img src = "sample2.jpg" width= 520px>
+         <li><strong> 카드 수정 및 실시간 미리보기 </strong> 작성한 카드는 왼쪽 입력창을 통해 언제든지 수정할 수 있으며, 그 결과는 오른쪽 preview에 실시간으로 반영됩니다.</li>
+          <br>
+          <img src = "sample3.jpg" width= 520px>
+        <li><strong> 자동 저장 및 불러오기 </strong> 새로고침이나 로그아웃하더라도 작성한 카드는 그대로 저장되며, 언제든지 다시 불러올 수 있습니다.</li>
+          <br>
+    </ul>
