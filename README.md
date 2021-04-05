@@ -3,6 +3,10 @@
 <ol>
   <li><strong>프로젝트 이름</strong> : Making Quote</li>
   <li><strong>사용 언어</strong> : HTML, CSS, JavaScript, React JS, 기타 fireBase, Cloudinary의 API </li>
+  <li><strong>제작 배경</strong> : 리액트를 학습하며, 다음과 같은 기능을 마스터하고 싶었습니다. <br><br> 1. firebase API를 이용한 로그인, 로그아웃 기능 <br> 2. 로그인한 사용자별 데이터 저장, 불러오기 <br> 3. 이미지 업로드 및 불러오기
+    <br><br>
+    이러한 점들을 중심으로, 누구든 쉽게 '그럴듯 해보이는 명언'을 만들 수 있다면 재밌을 것 같아, 'Making Quote' 프로젝트를 시작하게되었습니다.
+    
   <li><strong>주요 기능</strong> 
     <br><br>
     <ul>
