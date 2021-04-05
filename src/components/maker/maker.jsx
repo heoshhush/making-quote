@@ -7,52 +7,39 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import Styles from './maker.module.css'
 
-const Maker = ({ authService } ) => {
-    const [cards, setCards] = useState({
+const Maker = ({ authService, imageUploader, dataBase } ) => {
+    const historyState = useHistory().location.state.id
+    const [cards, setCards] = useState({})
+    const [userId, setUserId] = useState(historyState && historyState)
+    
+    dataBase.syncData();
 
-        1: {
-            id: 1 ,
-            author: 'Heo',
-            quote: 'Know Yourself',
-            fileName: 'heo',
-            fileURL: null,
-        },
-        2: {
-            id: 2 ,
-            author: 'Heo',
-            quote: 'Know Yourself2',
-            fileName: 'heo',
-            fileURL: null,
-        },
-        3: {
-            id: 3 ,
-            author: 'Heo',
-            quote: 'Know Yourself3',
-            fileName: 'heo',
-            fileURL: null,
-        },
-    })
-    
-    
-    
     const history = useHistory();
+
     const onLogout = () => {
         authService.logout();
     }
     
     const updateCard = (card) => {
-        setCards((cards) => {
+        setCards((cards) => {   
             const updated = {...cards};
             updated[card.id] = card;
             return updated;
         })
     }
+    
 
     // const updateCard = (card) => {
     //     const updated = {...cards};
     //     updated[card.id] = card;
     //     setCards(updated)
     // }
+
+    const deleteCard = (card) => {
+        const toDelete = {...cards};
+        delete(toDelete[card.id]);
+        setCards(toDelete)
+    }
 
     useEffect(
         firebaseAuth.onAuthStateChanged(user => {
@@ -61,7 +48,12 @@ const Maker = ({ authService } ) => {
             }
         })
         , [authService])
-    
+
+    useEffect(() => {
+        dataBase.syncData(userId, value => setCards(value))
+    },[dataBase])
+
+
     return (
         <>
         <Header />
@@ -75,6 +67,10 @@ const Maker = ({ authService } ) => {
                             cards = {cards}
                             keys = {Object.keys(cards)}
                             updateCard = {updateCard}
+                            deleteCard = {deleteCard}
+                            imageUploader = {imageUploader}
+                            userId = {userId}
+                            dataBase= {dataBase}
                         />
                     </div>
                     
@@ -83,6 +79,7 @@ const Maker = ({ authService } ) => {
                         <Preview 
                             cards = {cards}
                             keys = {Object.keys(cards)}
+                            
                         />  
                     </div>
 

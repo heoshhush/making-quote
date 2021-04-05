@@ -5,22 +5,23 @@ class AuthService {
     login = (provider) => {
         switch (provider){
             case 'Google' :
-                firebaseAuth.signInWithPopup(GoogleProvider)
-                break;
+                 return firebaseAuth.signInWithPopup(GoogleProvider)
             case 'Github' :
-                firebaseAuth.signInWithPopup(GithubProvider)
-                break;
+                 return firebaseAuth.signInWithPopup(GithubProvider)
             default :
                 throw new Error(`undefined Provider:${provider}`)
         }        
     }
 
-    
     logout = () => {
         firebaseAuth.signOut()
     }
 
-    // 로그인 감지?
+    onAuthChanged = (myFunction) => {
+        firebaseAuth.onAuthStateChanged(user => {
+            myFunction(user)
+        }
+        )}
 
 }
 

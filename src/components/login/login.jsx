@@ -7,21 +7,26 @@ import Styles from './login.module.css';
 
 const Login = ({ authService }) => {
     const history = useHistory();
+    const moveToMaker = (userId) => {
+        history.push(
+            {pathname: '/maker',
+             state: {id: userId},
+    })
+    }
 
-    useEffect(
-        firebaseAuth.onAuthStateChanged(user => {
-            if(user){
-                history.push('/maker')
-                console.log('Move to Maker Page')
-            }
-        }), [authService]
-    )
-    
     const onLogin = (event) => {
         const btnText = event.target.innerText
-        authService.login(btnText)
+        authService
+        .login(btnText)
+        .then(data => moveToMaker(data.user.uid))
     }
     
+    useEffect(() => {
+        authService.onAuthChanged(user => user && moveToMaker(user.uid))
+    }, [authService])
+    
+
+
     return(
         <div className={Styles.container}>
         <Header />

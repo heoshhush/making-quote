@@ -35,3 +35,10 @@
 .preview {
   flex-basis: 50%;
 }
+
+@media screen and (max-width: 1250px) {
+  .contents {
+    display: flex;
+    flex-direction: column;
+  }
+}

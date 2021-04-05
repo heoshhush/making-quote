@@ -3,12 +3,14 @@
 .cardEditForm {
   margin-bottom: 2em;
   width: 80%;
+  height: 30em;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .firstLine {
   display: flex;
@@ -35,9 +37,11 @@
 .fileInputBtn {
   cursor: pointer;
   width: 100%;
-  height: 2.2em;
+  height: 100%;
   background-color: makerBlack;
   color: makerWhite;
+  outline: none;
+  border: none;
 }
 .fileInputBtn:hover {
   background-color: makerWhite;
@@ -48,6 +52,7 @@
   border: 2px solid makerBlack;
   border-top: 0;
   padding: 0.5em;
+  height: 90%;
 }
 .addBtn {
   height: 2em;

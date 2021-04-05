@@ -1,3 +1,4 @@
 @value makerBlack: black;
 @value makerWhite: white;
 @value makerGrey: grey;
+@value makerColorful: linear-gradient(90deg, rgba(251,251,255,1) 1%, rgba(237,237,237,1) 17%, rgba(121,123,126,1) 52%, rgba(113,115,116,1) 68%, rgba(66,66,66,1) 83%, rgba(48,48,48,1) 94%, rgba(53,58,59,1) 100%);

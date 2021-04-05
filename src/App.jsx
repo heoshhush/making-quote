@@ -4,7 +4,7 @@ import Login from './components/login/login';
 import Maker from './components/maker/maker';
 import { firebaseAuth } from './services/firebase';
 
-function App({ authService }) {
+function App({ authService, imageUploader, dataBase }) {
   
   return (
     <BrowserRouter>
@@ -17,6 +17,8 @@ function App({ authService }) {
         <Route path='/maker'>
           <Maker 
             authService = {authService}
+            imageUploader = {imageUploader}
+            dataBase = {dataBase}
           />
         </Route>
       </Switch>

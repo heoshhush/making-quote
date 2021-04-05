@@ -3,7 +3,7 @@ import CardAddForm from '../card-add-form/cardAddForm';
 import CardEditForm from '../card-edit-form/cardEditForm';
 import Styles from './editor.module.css'
 
-const Editor = ({ cards, keys, updateCard }) => {
+const Editor = ({ userId, dataBase, cards, keys, updateCard, imageUploader, deleteCard }) => {
     return(
         <section className={Styles.container}>
         <h1 className={Styles.title}> Edit</h1>
@@ -12,10 +12,19 @@ const Editor = ({ cards, keys, updateCard }) => {
                 key = {key}
                 card = {cards[key]}
                 updateCard = {updateCard}
+                imageUploader = {imageUploader}
+                deleteCard = {deleteCard}
+                userId = {userId}
+                dataBase= {dataBase}
                 
             />
         ))}
-        <CardAddForm />
+        <CardAddForm 
+            updateCard = {updateCard}
+            imageUploader = {imageUploader}
+            userId = {userId}
+            dataBase= {dataBase}
+        />
     </section>
     )
     }
