@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "Merriweather";
+  src: url("common/font/Merriweather-LightItalic.ttf");
+}
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 2em;
   background-color: grey;

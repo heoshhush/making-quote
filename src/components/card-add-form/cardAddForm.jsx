@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Styles from './cardAddForm.module.css'
 
-const CardAddForm = ({ userId, dataBase, updateCard, imageUploader }) => {
+const CardAddForm = ({updateCard, imageUploader }) => {
     const [fileURL, setFileURL] = useState();
     const [fileName, setFileName] = useState();
     const [loading, setLoading] = useState(false);
@@ -34,10 +34,9 @@ const CardAddForm = ({ userId, dataBase, updateCard, imageUploader }) => {
             quote: quoteRef.current.value,
             theme: themeRef.current.value,
             fileName: fileName || 'No File',
-            fileURL: fileURL || '',
+            fileURL: fileURL || 'https://res.cloudinary.com/drhfkpavq/image/upload/v1616651072/samples/animals/cat.jpg',
         }
         updateCard(card)
-        dataBase.saveCard(userId, card)
         formRef.current.reset();
         
     }
@@ -60,7 +59,7 @@ const CardAddForm = ({ userId, dataBase, updateCard, imageUploader }) => {
                     <div className={Styles.file}>
                         {loading && <div className={Styles.loading}></div>}
                     <input ref={fileInputRef} className={Styles.fileInput} onChange={onChangeFile} type="file"/>
-                    {!loading && <button className={Styles.fileInputBtn} onClick={clickFileInput}> Upload Img </button>}
+                    {!loading && <button className={Styles.fileInputBtn} onClick={clickFileInput}> {fileName || 'Upload Img'} </button>}
                 </div>
                 </div>
                 <textarea ref={quoteRef} className={Styles.quote} name="quote"cols="30" rows="10" placeholder="Your Quote">

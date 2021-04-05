@@ -11,7 +11,6 @@ const Maker = ({ authService, imageUploader, dataBase } ) => {
     const historyState = useHistory().location.state.id
     const [cards, setCards] = useState({})
     const [userId, setUserId] = useState(historyState && historyState)
-    
     dataBase.syncData();
 
     const history = useHistory();
@@ -26,6 +25,7 @@ const Maker = ({ authService, imageUploader, dataBase } ) => {
             updated[card.id] = card;
             return updated;
         })
+        dataBase.saveCard(userId, card)
     }
     
 
@@ -36,22 +36,36 @@ const Maker = ({ authService, imageUploader, dataBase } ) => {
     // }
 
     const deleteCard = (card) => {
-        const toDelete = {...cards};
-        delete(toDelete[card.id]);
-        setCards(toDelete)
+        setCards((cards) => {
+            const toDelete = {...cards};
+            delete(toDelete[card.id]);
+            return toDelete
+        })
+        dataBase.deleteCard(userId, card)
     }
 
-    useEffect(
+    // const deleteCard = (card) => {
+    //     const toDelete = {...cards};
+    //     delete(toDelete[card.id]);
+    //     setCards(toDelete)
+    //     dataBase.deleteCard(userId, card)
+    // }
+
+
+    useEffect( () => {
         firebaseAuth.onAuthStateChanged(user => {
             if (!user){
                 history.push('/')
+            } else if(user){
+                setUserId(user.uid)
             }
-        })
-        , [authService])
+        })}
+        , [history, userId, authService])
 
     useEffect(() => {
-        dataBase.syncData(userId, value => setCards(value))
-    },[dataBase])
+        const stopSync = dataBase.syncData(userId, value => setCards(value))
+        return () => stopSync();
+    },[userId, dataBase])
 
 
     return (

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router';
-import { firebaseAuth } from '../../services/firebase';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Styles from './login.module.css';
@@ -23,7 +22,7 @@ const Login = ({ authService }) => {
     
     useEffect(() => {
         authService.onAuthChanged(user => user && moveToMaker(user.uid))
-    }, [authService])
+    })
     
 
 

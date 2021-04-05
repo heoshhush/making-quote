@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Styles from './header.module.css'
 
-const Header = (props) => {
+const Header = memo(
+    (props) => {
     return(
         <div className={Styles.header}>
             <div className={Styles.logo}>Making Quote</div> 
@@ -9,5 +10,6 @@ const Header = (props) => {
 
     )
 }
+)
 
 export default Header;

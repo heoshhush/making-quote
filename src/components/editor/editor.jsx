@@ -14,16 +14,12 @@ const Editor = ({ userId, dataBase, cards, keys, updateCard, imageUploader, dele
                 updateCard = {updateCard}
                 imageUploader = {imageUploader}
                 deleteCard = {deleteCard}
-                userId = {userId}
-                dataBase= {dataBase}
                 
             />
         ))}
         <CardAddForm 
             updateCard = {updateCard}
             imageUploader = {imageUploader}
-            userId = {userId}
-            dataBase= {dataBase}
         />
     </section>
     )

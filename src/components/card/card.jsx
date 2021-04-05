@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Styles from './card.module.css';
 
-const Card = ({card}) => {
+const Card = memo(({card}) => {
     const {quote, author, theme, fileURL} = card
 
     
@@ -13,11 +13,11 @@ const Card = ({card}) => {
                     </div>
                 <div className={Styles.author}>- {author}</div>
             </div>
-
             <img className={Styles.img} src={fileURL || '/images/default_logo.png'} alt="img"/>
         </section>
     )
 }
+)
 
 const getTheme = (theme) => {
     switch(theme){
@@ -31,6 +31,7 @@ const getTheme = (theme) => {
         throw new Error(`undefined theme : ${theme}`)
     }
 }
+
 
 
 export default Card;

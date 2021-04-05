@@ -31,6 +31,9 @@
   padding: 0.5em;
 }
 .file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-basis: 20%;
   border: 2px solid makerBlack;
 }
@@ -53,10 +56,34 @@
   border-top: 0;
   padding: 0.5em;
   height: 90%;
+  font-size: 1.2em;
 }
 .addBtn {
   height: 2em;
   font-size: 1.2em;
   background-color: makerBlack;
   color: makerWhite;
+  cursor: pointer;
+}
+.addBtn:hover {
+  background-color: makerWhite;
+  color: makerBlack;
+}
+.loading {
+  position: absolute;
+  width: 1.3em;
+  height: 1.3em;
+  border: 2px solid makerBlack;
+  border-top: 2px solid makerWhite;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

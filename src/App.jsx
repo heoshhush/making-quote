@@ -1,8 +1,7 @@
-import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.module.css';
 import Login from './components/login/login';
 import Maker from './components/maker/maker';
-import { firebaseAuth } from './services/firebase';
 
 function App({ authService, imageUploader, dataBase }) {
   
