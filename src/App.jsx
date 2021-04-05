@@ -6,7 +6,7 @@ import Maker from './components/maker/maker';
 function App({ authService, imageUploader, dataBase }) {
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/making-quote">
       <Switch>
         <Route exact path='/'>
           <Login 
